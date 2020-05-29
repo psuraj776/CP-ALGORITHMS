@@ -1,3 +1,10 @@
+/*
+* Here p is 2-D array of given pair of node with edge.
+* g is the adjacency list of graph.
+*/
+
+
+
 class Solution {
     HashSet<Integer> white;
     HashSet<Integer> grey;
@@ -17,9 +24,9 @@ class Solution {
             white.add(i);
         }
         for(int i=0;i<n;i++){
-            if(dfs(i,g,white,grey,black)) return false;
+            if(dfs(i,g,white,grey,black)) return true;
         }
-        return true;
+        return false;
     }
     public boolean dfs(int vertex,ArrayList<Integer>[] g,HashSet<Integer> white,HashSet<Integer> grey,HashSet<Integer> black){
         move(vertex,white,grey);
