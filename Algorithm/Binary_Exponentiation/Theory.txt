@@ -1,0 +1,10 @@
+When we have to get a^n.
+Naive way is a*a*a*a*a*a....... n times
+Binary exponentiation is if power is even then answer would be a^(n/2) * a^(n/2), else if power is odd then answer would be a * a^(n-1)
+There is another way
+for example 
+2^10
+
+Here 10 can we written in form 1010
+  1     0     1    0
+a^8   a^4   a^2
