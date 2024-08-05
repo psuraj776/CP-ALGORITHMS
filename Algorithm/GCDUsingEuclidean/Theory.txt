@@ -1,0 +1,7 @@
+If A divides B and C.
+Then A must divide B-C, C-B. depends whether B>C or C>B respectively.
+O(log(min(B,C)))
+
+Applications:
+1. Least common multiple //LCM(B,C)*HCF(B,C)=B*C
+2. Binary GCD
