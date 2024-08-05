@@ -3,6 +3,7 @@
 
 import java.io.*;
 import java.util.*;
+import ../Exception/Exception.java;
 
 class Node{
   int data;
@@ -25,9 +26,22 @@ class LinkedList{
     this.size=0;
   }
 
-  public void add(int data){
+  public void addToHead(int data){
     Node toAdd = new Node(data);
     if(head == null){
+      head = toAdd;
+      tail = toAdd;
+    }
+    else{
+      toAdd.next = head;
+      head = toAdd;
+    }
+    size+=1;
+  }
+
+  public void addToTail(int data){
+    Node toAdd = new Node(data);
+    if(tail == null){
       head = toAdd;
       tail = toAdd;
     }
@@ -38,9 +52,25 @@ class LinkedList{
     size+=1;
   }
 
-  public int removeFromFront(){
-    try{
-      if(
+  public int removeFromFront() throws EmptyListException{
+    if(size == 0){
+      throw new EmptyListException("Cannot remove element since list is empty");
     }
+    int data = head.data;
+    head = head.next;
+    if(head==null) tail=null;
+    size-=1;
+    return data;
+  }
+
+  public int removeFromTail() throws EmptyListException{
+    if(size == 0){
+      throw new EmptyListException("Cannot remove element since list is empty");
+    }
+    int data = tail.data;
+    head = head.next;
+    if(head==null) tail=null;
+    size-=1;
+    return data;
   }
 }
